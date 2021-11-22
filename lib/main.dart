@@ -41,6 +41,7 @@ class _MyHomeState extends State<MyHome> {
   bool check = false;
    int groupValue = 1;
    double val = 20;
+   bool chk = true;
 
   Widget build(BuildContext context){
 
@@ -131,16 +132,33 @@ class _MyHomeState extends State<MyHome> {
   carousel_slider: ^4.0.0   //in pubspec.yaml
 -- import 'package:carousel_slider/carousel_slider.dart';
 */
+      // return Column(children: [
+      //   CarouselSlider(items: [
+      //     // Text("Hello"),
+      //     // Text("Hay")
+      //     Image.asset("assets/imgone.jpg"),
+      //     Image.asset("assets/imgtwo.jpg")
+      //   ],
+      //   options: CarouselOptions(autoPlay: true, scrollDirection: Axis.vertical ),
+      //   )
+      // ]);
+
+//Switch
       return Column(children: [
-        CarouselSlider(items: [
-          // Text("Hello"),
-          // Text("Hay")
-          Image.asset("assets/imgone.jpg"),
-          Image.asset("assets/imgtwo.jpg")
-        ],
-        options: CarouselOptions(autoPlay: true, scrollDirection: Axis.vertical ),
-        )
+        Switch(
+          activeColor: Colors.red,
+          activeTrackColor: Colors.yellow,
+          inactiveTrackColor: Colors.green,
+          inactiveThumbColor: Colors.black,
+          value: true,
+          onChanged: (status){
+           setState(() {
+             chk = status;
+           });
+         })
       ]);
+
+
 
 
 
